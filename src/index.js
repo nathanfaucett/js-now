@@ -1,11 +1,8 @@
-var defineProperty = require("define_property");
-
-
-var dateNow = Date.now || function now() {
+var Date_now = Date.now || function Date_now() {
         return (new Date()).getTime();
     },
 
-    START_MS = dateNow(),
+    START_TIME = Date_now(),
 
     now, performance, HR_TIME;
 
@@ -20,7 +17,7 @@ if (typeof(window) !== "undefined") {
         performance.msNow ||
         performance.oNow ||
         function now() {
-            return dateNow() - START_MS;
+            return Date_now() - START_TIME;
         }
     );
 
@@ -37,12 +34,12 @@ if (typeof(window) !== "undefined") {
 }
 
 
-defineProperty(now, "START_TIME", {
-    configurable: false,
-    enumerable: false,
-    writable: false,
-    value: START_MS
-});
+now.getStartTime = function getStartTime() {
+    return START_TIME;
+};
+
+
+START_TIME -= now();
 
 
 module.exports = now;

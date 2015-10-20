@@ -3,10 +3,11 @@ var tape = require("tape"),
 
 
 tape("now() -> Number", function(assert) {
-    var test = now.START_TIME + now(),
-        actual = (new Date()).getTime();
+    var startTime = now.getStartTime(),
+        test = now(),
+        actual = (new Date()).getTime() - startTime;
 
-    if ((test - 5000) > actual || (test + 5000) < actual) {
+    if ((test - 1) > actual || (test + 1) < actual) {
         assert.equal(test, actual, "should be close to (new Date()).getTime()");
     } else {
         assert.equal(true, true, "should be close to (new Date()).getTime()");
