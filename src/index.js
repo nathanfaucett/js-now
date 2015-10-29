@@ -1,4 +1,6 @@
-var Date_now = require("./Date_now"),
+var Date_now = Date.now || function Date_now() {
+        return (new Date()).getTime();
+    },
     START_TIME = Date_now(),
     HR_TIME = process.hrtime();
 
