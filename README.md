@@ -1,4 +1,10 @@
 now
 =======
 
-performance.now for the browser and node.js
+performance.now polyfill
+
+```javascript
+var now = require("@nathanfaucett/now");
+
+now(); // returns time in milliseconds since loaded
+```
