@@ -1,6 +1,6 @@
 {
   "name": "@nathanfaucett/now",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "performance.now polyfill",
   "repository": {
     "type": "git",

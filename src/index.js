@@ -19,6 +19,10 @@ now.stamp = function stamp() {
     return START_TIME + now();
 };
 
+now.hrtime = function hrtime(previous) {
+    return process.hrtime(previous);
+};
+
 
 START_TIME -= now();
 
